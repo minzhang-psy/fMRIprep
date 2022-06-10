@@ -1,0 +1,32 @@
+# Edit Bash Profile
+
+nano ~/.bash_profile
+
+# .bash_profile
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+# User specific environment and startup programs
+# --------------------------------------------------------------------------------
+#----------------------
+#1. ADD SOURCE PATHS
+#----------------------
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PATH
+export PATH= ''     #TODO: ADD Path
+
+module load fsl/5.0.10
+#module load fsl/6.0.1
+module load fsleyes
+module load python2/2.7.13
+module load matlab
+module load freesurfer
+#-------------------------------------
+#2. SETUP ALIAS & STARTING DIRECTORY
+#-------------------------------------
+cd #TODO: add path 
+# When I want to start interactive node, shortcut by just typing "ip"
+alias ip="xrun --account=bamlab --partition=dasa --pty --time=2"
+# Check queue for jobs
+alias sq="squeue -u username"   #TODO: Change username
